@@ -28,6 +28,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Home from './src/features/Home';
+import Profile from './src/features/Profile';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -65,7 +66,7 @@ function App(): JSX.Element {
   return (
     <QueryClientProvider client={queryClient}>
     <SafeAreaView>
-     <Home/>
+     <Profile/>
     </SafeAreaView>
     </QueryClientProvider>
   );
