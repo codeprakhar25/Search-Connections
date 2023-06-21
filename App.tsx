@@ -19,6 +19,8 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
 
 import {
   Colors,
@@ -34,6 +36,7 @@ type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 const queryClient = new QueryClient();
+const Stack = createNativeStackNavigator();
 
 function Section({children, title}: SectionProps): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -65,9 +68,12 @@ function App(): JSX.Element {
 
   return (
     <QueryClientProvider client={queryClient}>
-    <SafeAreaView>
-     <Profile/>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home}  options={{headerShown: false}}/>
+        <Stack.Screen name="Profile" component={Profile}  options={{headerShown: false}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
     </QueryClientProvider>
   );
 }

@@ -15,9 +15,7 @@ const Card = ({props, navigation}:any) => {
 
   return (
     <>
-      <Pressable
-        // onPress={() => navigation.navigate('uniqueMachine', {id})}
-        >
+      <>
         <View style={styles.container}>
           <View>
             <Image
@@ -55,7 +53,7 @@ const Card = ({props, navigation}:any) => {
             <Text style={{paddingHorizontal: 17}}>{age}</Text>
           </View>
         </View>
-      </Pressable>
+      </>
     </>
   );
 };
