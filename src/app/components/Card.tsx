@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable no-trailing-spaces */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable eol-last */
@@ -11,17 +12,24 @@ import React from 'react';
 
 
 const Card = ({props, navigation}:any) => {
-  const {picture,firstname,age,company,email} = props;
+  const {picture,firstname,age,company,email,gender} = props;
 
   return (
     <>
       <>
         <View style={styles.container}>
           <View>
-            <Image
-              style={{borderRadius: 8, height: 100, width: 120}}
-              source={{uri: `${picture}`}}
-            />
+          {
+  gender === 'male' ?
+   <>
+   <Image style={{borderRadius: 8, height: 100, width: 100}}  source={require('../assets/male.jpg')}
+   />
+   </> 
+  :
+<Image style={{borderRadius: 8, height: 100, width: 100}} 
+source={require('../assets/female.jpg')}
+   />
+}
           </View>
           <View>
             <View
@@ -42,10 +50,6 @@ const Card = ({props, navigation}:any) => {
                 paddingHorizontal: 15,
                 paddingTop: 6,
               }}>
-              {/* <Image
-                style={{padding: 10, tintColor: 'black'}}
-                // source={require('../assets/location.png')}
-              /> */}
 
               <Text style={{fontSize: 15}}>{email}</Text>
               <Text style={{fontSize: 15}}>{company}</Text>

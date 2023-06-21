@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable quotes */
 /* eslint-disable radix */
 /* eslint-disable react-hooks/exhaustive-deps */
@@ -10,7 +11,7 @@
 
 
 import React,{useEffect} from 'react'
-import { ScrollView, Text,View} from 'react-native'
+import { ScrollView, Text,View,Image} from 'react-native'
 import Header from '../app/components/Header'
 import ScreenWrapper from '../app/components/ScreenWrapper'
 import { useQuery } from 'react-query';
@@ -56,6 +57,17 @@ if (error){
   <ScreenWrapper>
     <ScrollView showsVerticalScrollIndicator={false}>
  <Text>{data[0].firstname}</Text>
+ {
+  data[0].gender === 'male' ?
+   <>
+   <Image style={{height:100, width:100}}  source={require('../app/assets/male.jpg')}
+   />
+   </> 
+  :
+<Image style={{height:100, width:100}} 
+source={require('../app/assets/female.jpg')}
+   />
+}
     </ScrollView>
 </ScreenWrapper>
       )

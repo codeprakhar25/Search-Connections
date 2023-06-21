@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-/* eslint-disable quotes */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable space-infix-ops */
