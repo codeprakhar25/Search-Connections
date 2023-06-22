@@ -1,15 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable quotes */
-/* eslint-disable radix */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable jsx-quotes */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable semi */
-
-
-
 import React,{useEffect} from 'react'
 import {StyleSheet, ScrollView, Text,View,Image} from 'react-native'
 import Header from '../app/components/Header'
@@ -66,7 +54,7 @@ source={require('../app/assets/female.jpg')}
 />
 }
 <View style={styles.Details}>  
-        <Text style={{fontSize: 20, fontWeight: 800}}>{data[0].firstname} {data[0].surname}</Text>
+        <Text style={{fontSize: 20, fontWeight: 'bold'}}> {data[0].firstname} {data[0].surname}</Text>
               <Text style={{fontSize: 18}}>{data[0].company}</Text>
             <Text style={{fontSize: 18}}>Age- {data[0].age}</Text>
               <Text style={{fontSize: 18}}>{data[0].email}</Text>

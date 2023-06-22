@@ -1,11 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable eol-last */
-
-
-
 import {StyleSheet, Image, Text, View, Pressable,TouchableOpacity} from 'react-native';
 import React from 'react';
 
@@ -32,7 +24,7 @@ source={require('../assets/female.jpg')}
 }
           </View>
           <View style={styles.rightBody}>  
-        <Text style={{fontSize: 16, fontWeight: 800}}>{firstname} {surname}</Text>
+        <Text style={{fontSize: 16, fontWeight: 'bold'}}>{firstname} {surname}</Text>
               <Text style={{fontSize: 15}}>{company}</Text>
             <Text style={{fontSize: 15}}>Age- {age}</Text>
               <Text style={{fontSize: 14}}>{email}</Text>

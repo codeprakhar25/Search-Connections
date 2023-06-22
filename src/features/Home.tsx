@@ -1,11 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable space-infix-ops */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable jsx-quotes */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable semi */
 
 import React, { useState, useEffect } from 'react'
 import { Pressable, ScrollView, Text,View,TouchableOpacity, Animated} from 'react-native'
@@ -76,8 +68,8 @@ const {isSuccess, isLoading, error,data} = useQuery(['search', searchvalue,sortO
   onValueChange={handleSortOptionChange}
 >
   <Picker.Item label="Sort by: None" value="" />
-  <Picker.Item label="Sort by: Ascending" value="asc" />
-  <Picker.Item label="Sort by: Descending" value="desc" />
+  <Picker.Item label="Sort by: Ascending(age)" value="asc" />
+  <Picker.Item label="Sort by: Descending(age)" value="desc" />
 </Picker><Text><Loading/></Text></>;
 }
 

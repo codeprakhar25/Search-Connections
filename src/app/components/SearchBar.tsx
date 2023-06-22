@@ -1,11 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable no-trailing-spaces */
-
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
-
-
 import React, { useState } from 'react';
 import { View, TextInput, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -18,8 +10,6 @@ interface MyComponentProps {
 }
 
 const SearchBar: React.FC<MyComponentProps>  = (props) => {
-    // const [ searchText, setSearchText] = useState('');
-  
     const handleSearch = async () => {
       console.log('Search:', props.text1);
       props.function();

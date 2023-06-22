@@ -1,20 +1,14 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable eol-last */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable semi */
-
-
-import { Platform, StyleSheet, Text, View } from 'react-native'
+ import { Platform, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 const ScreenWrapper = ({children} : any) => {
   return (
     <View style={styles.screenWrapper}>
-      {children}
+      {children}                                                                
     </View>
   )
 }
-
+                    
 export default ScreenWrapper
 
 const styles = StyleSheet.create({

@@ -1,10 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable eol-last */
-/* eslint-disable quotes */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable semi */
-
-
 import React from 'react'
 import { StyleSheet, Text, View, Pressable ,TextInput,Alert} from 'react-native';
 import ScreenWrapper from './ScreenWrapper';
@@ -35,7 +28,8 @@ const styles = StyleSheet.create({
       fontSize: 18,
       },
       headertext:{
-        fontWeight:700,
+        fontWeight:'bold',
+        fontSize:20,
       margin:8,
       marginTop:18,
       marginLeft:30,
