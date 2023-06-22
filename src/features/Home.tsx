@@ -8,7 +8,7 @@
 /* eslint-disable semi */
 
 import React, { useState, useEffect } from 'react'
-import { Pressable, ScrollView, Text,View} from 'react-native'
+import { Pressable, ScrollView, Text,View,TouchableOpacity, Animated} from 'react-native'
 import Header from '../app/components/Header'
 import ScreenWrapper from '../app/components/ScreenWrapper'
 import SearchBar from '../app/components/SearchBar'
@@ -49,7 +49,10 @@ const Home = ({navigation}:any) => {
     return data;
 };
 
-
+const scaleValue = new Animated.Value(1); 
+const viewStyle = {
+  transform: [{ scale: scaleValue }],
+};
 useEffect(() => {
     fetchData();
   
@@ -105,19 +108,19 @@ else if (error) {
   <Picker.Item label="Sort by: Descending" value="desc"/>
 </Picker>
     {data && (
-  <ScreenWrapper>
+  <>
     <ScrollView showsVerticalScrollIndicator={false}>
   {data.map((item: any) => (
-    <>
-    <Pressable onPress={()=>{
+    <TouchableOpacity onPress={()=>{
       navigation.navigate('Profile' ,{itemId: item.index} )
     }}>
+      <>
 <Card props={item} />
-    </Pressable>
     </>
+    </TouchableOpacity>
   ))} 
     </ScrollView>
-</ScreenWrapper>
+</>
       )
   }
     </>

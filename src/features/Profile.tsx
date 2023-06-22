@@ -11,7 +11,7 @@
 
 
 import React,{useEffect} from 'react'
-import { ScrollView, Text,View,Image} from 'react-native'
+import {StyleSheet, ScrollView, Text,View,Image} from 'react-native'
 import Header from '../app/components/Header'
 import ScreenWrapper from '../app/components/ScreenWrapper'
 import { useQuery } from 'react-query';
@@ -50,24 +50,29 @@ if (error){
   return (
     <>
     <Header text='Profile'/>
-
-    <Text>Profile</Text>
-
        {data && (
   <ScreenWrapper>
     <ScrollView showsVerticalScrollIndicator={false}>
- <Text>{data[0].firstname}</Text>
+      <View style={styles.ProfileContainer}>
  {
-  data[0].gender === 'male' ?
+   data[0].gender === 'male' ?
    <>
-   <Image style={{height:100, width:100}}  source={require('../app/assets/male.jpg')}
+   <Image style={styles.profileImg}  source={require('../app/assets/male.jpg')}
    />
    </> 
   :
-<Image style={{height:100, width:100}} 
+<Image style={styles.profileImg} 
 source={require('../app/assets/female.jpg')}
-   />
+/>
 }
+<View style={styles.Details}>  
+        <Text style={{fontSize: 20, fontWeight: 800}}>{data[0].firstname} {data[0].surname}</Text>
+              <Text style={{fontSize: 18}}>{data[0].company}</Text>
+            <Text style={{fontSize: 18}}>Age- {data[0].age}</Text>
+              <Text style={{fontSize: 18}}>{data[0].email}</Text>
+              <Text style={{fontSize: 18}}>{data[0].phone}</Text>
+            </View>
+      </View>
     </ScrollView>
 </ScreenWrapper>
       )
@@ -77,3 +82,30 @@ source={require('../app/assets/female.jpg')}
 }
 
 export default Profile
+
+
+const styles = StyleSheet.create({
+  ProfileContainer:{
+  height:400,
+  width:'100%',
+  backgroundColor: '#F9FCFE',
+  marginTop:100,
+
+  },
+
+  profileImg:{
+    height:120, 
+    width:120,
+    marginTop:-55,
+    marginLeft:'30%',
+  },
+  Details:{
+    marginTop:40,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems:'center',
+    textAlign: 'center',
+    justifyContent:'center',
+    gap: 10,
+  },
+})

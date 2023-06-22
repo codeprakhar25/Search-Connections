@@ -6,19 +6,19 @@
 
 
 
-import {StyleSheet, Image, Text, View, Pressable} from 'react-native';
+import {StyleSheet, Image, Text, View, Pressable,TouchableOpacity} from 'react-native';
 import React from 'react';
 
 
 
 const Card = ({props, navigation}:any) => {
-  const {picture,firstname,age,company,email,gender} = props;
+  const {picture,firstname,age,surname,company,email,gender} = props;
 
   return (
     <>
       <>
         <View style={styles.container}>
-          <View>
+          <View style={styles.ImgContainer}>
           {
   gender === 'male' ?
    <>
@@ -31,31 +31,12 @@ source={require('../assets/female.jpg')}
    />
 }
           </View>
-          <View>
-            <View
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                width: '100%',
-                paddingHorizontal: 20,
-              }}>
-              <Text style={{fontSize: 16, fontWeight: 800}}>{firstname}</Text>
-            </View>
-            <View
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 3,
-                paddingHorizontal: 15,
-                paddingTop: 6,
-              }}>
-
-              <Text style={{fontSize: 15}}>{email}</Text>
+          <View style={styles.rightBody}>  
+        <Text style={{fontSize: 16, fontWeight: 800}}>{firstname} {surname}</Text>
               <Text style={{fontSize: 15}}>{company}</Text>
+            <Text style={{fontSize: 15}}>Age- {age}</Text>
+              <Text style={{fontSize: 14}}>{email}</Text>
             </View>
-            <Text style={{paddingHorizontal: 17}}>{age}</Text>
-          </View>
         </View>
       </>
     </>
@@ -70,12 +51,28 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
-    height: 150,
-    paddingTop: 16,
-    marginTop: 16,
+    height: 120,
+    margin: 8,
+    marginTop:0,
+    marginRight:10,
     borderWidth: 1,
     backgroundColor: '#F9FCFE',
     borderColor: '#F9FCFE',
     borderRadius: 8,
+  },
+  ImgContainer:{
+    marginLeft:10,
+  display: 'flex',
+justifyContent:'center',
+alignItems:'center',
+  },
+  rightBody:{
+    display: 'flex',
+    width:'70%',
+    flexDirection: 'column',
+    textAlign: 'left',
+    gap: 3,
+    paddingHorizontal: 20,
+ justifyContent:'center',
   },
 });
