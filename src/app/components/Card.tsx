@@ -1,8 +1,6 @@
 import {StyleSheet, Image, Text, View, Pressable,TouchableOpacity} from 'react-native';
 import React from 'react';
 
-
-
 const Card = ({props, navigation}:any) => {
   const {picture,firstname,age,surname,company,email,gender} = props;
 

@@ -1,6 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Pressable ,TextInput,Alert} from 'react-native';
-import ScreenWrapper from './ScreenWrapper';
+import { StyleSheet, Text, View} from 'react-native';
 
 interface MyComponentProps {
   text: string;
@@ -34,5 +33,5 @@ const styles = StyleSheet.create({
       marginTop:18,
       marginLeft:30,
       color: "#2E2E2E",
-      },
+      }
 })

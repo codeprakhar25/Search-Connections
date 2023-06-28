@@ -5,8 +5,6 @@ import ScreenWrapper from '../app/components/ScreenWrapper'
 import { useQuery } from 'react-query';
 import Loading from '../app/components/Loading';
 
-
-
 const Profile = ( {route}:any) => {
   const {itemId} = route.params;
   console.log(itemId)

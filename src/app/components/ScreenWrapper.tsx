@@ -1,4 +1,4 @@
- import { Platform, StyleSheet, Text, View } from 'react-native'
+ import { Platform, StyleSheet, View } from 'react-native'
 import React from 'react'
 
 const ScreenWrapper = ({children} : any) => {

@@ -10,9 +10,8 @@ import { Image } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
 import Card from '../app/components/Card'
 
-
-
 const Home = ({navigation}:any) => {
+
   const [searchvalue, setSearchValue]=useState('');
   const [sortOption, setSortOption] = useState('');
   
@@ -26,7 +25,6 @@ const Home = ({navigation}:any) => {
         const data = fetdata.filter((item:any) => {
             return item.firstname.toLowerCase().includes(searchvalue.toLowerCase());
         });
-          // Apply sort
   if (sortOption === 'asc') {
     data.sort((a:any, b:any) => {
       return a.age - b.age;
@@ -42,12 +40,8 @@ const Home = ({navigation}:any) => {
 };
 
 const scaleValue = new Animated.Value(1); 
-const viewStyle = {
-  transform: [{ scale: scaleValue }],
-};
 useEffect(() => {
     fetchData();
-  
     console.log('myState has changed:', searchvalue);
     console.log('sort value has changed', sortOption)
   }, [searchvalue,sortOption]); 
@@ -76,10 +70,6 @@ const {isSuccess, isLoading, error,data} = useQuery(['search', searchvalue,sortO
 else if (error) {
     return <Text>Error</Text>;
 }
-
-
-
-
   return (
     <>
     <Header text='Your Connections'/>
