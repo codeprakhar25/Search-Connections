@@ -1,10 +1,9 @@
 
 import React, { useState, useEffect } from 'react'
-import { Pressable, ScrollView, Text,View,TouchableOpacity, Animated} from 'react-native'
+import {  ScrollView, Text,View,TouchableOpacity, Animated} from 'react-native'
 import Header from '../app/components/Header'
-import ScreenWrapper from '../app/components/ScreenWrapper'
 import SearchBar from '../app/components/SearchBar'
-import { useMutation, useQuery } from 'react-query';
+import {  useQuery } from 'react-query';
 import Loading from '../app/components/Loading'
 import { Image } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
@@ -39,14 +38,13 @@ const Home = ({navigation}:any) => {
     return data;
 };
 
-const scaleValue = new Animated.Value(1); 
 useEffect(() => {
     fetchData();
     console.log('myState has changed:', searchvalue);
-    console.log('sort value has changed', sortOption)
+    console.log('sort value has changed', sortOption);
   }, [searchvalue,sortOption]); 
 
-const {isSuccess, isLoading, error,data} = useQuery(['search', searchvalue,sortOption], fetchData);
+const { isLoading, error,data} = useQuery(['search', searchvalue,sortOption], fetchData);
 
   if (isLoading) {
     return <><Header text='Your Connections'/>
@@ -83,7 +81,6 @@ else if (error) {
         <Picker
   selectedValue={sortOption}
   onValueChange={handleSortOptionChange}
-
 >
   <Picker.Item label="Sort by: None" value=""/>
   <Picker.Item label="Sort by: Ascending" value="asc"/>

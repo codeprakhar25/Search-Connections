@@ -19,7 +19,7 @@ const Profile = ( {route}:any) => {
 };
 
 
-const {isSuccess, isLoading, error,data} = useQuery('mydata',fetchData);
+const { isLoading, error,data} = useQuery('mydata',fetchData);
 
 useEffect(() => {
   fetchData();
